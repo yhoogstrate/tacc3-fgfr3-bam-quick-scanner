@@ -1,5 +1,8 @@
 
-# tacc3-fgfr3-quick-bam-scanner: Scans for reads mapped to both TACC3 and FGFR3
+# tacc3-fgfr3-quick-bam-scanner
+
+Scans for reads mapped to both TACC3 and FGFR3, directly from BAM files
+
 
 ## What it does
 
