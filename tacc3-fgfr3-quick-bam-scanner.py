@@ -1,5 +1,24 @@
 #!/usr/bin/env python
 
+"""
+    tacc3-fgf3-quick-bam-scanner scans for reads aligned to both TACC3
+         and FGFR3, directly from BAM files.
+    Copyright (C) 2021  Youri Hoogstrate
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+"""
+
 import click
 import pysam
 import tqdm
@@ -48,18 +67,20 @@ def tacc_fgf3_quick_bam_scan(reference_build, bam_files):
                     idx[read.qname].add(read)
 
         combined = reads_tacc3.intersection(reads_fgfr3)
-        if len(combined) > 0:
+        # Export bam files - for manual curation
+        #if len(combined) > 0:
+            #
             #sid = bam_file.split("/")[-2]
-            sid = os.path.basename(bam_file)
-            fn = "/tmp/" + sid + ".unsorted.bam"
-            print("\n"+"/tmp/" + sid + ".sorted.bam"+"\n")
-            with pysam.AlignmentFile(fn, "wb", header=header) as fh:
-                for _ in combined:
-                    for __ in idx[_]:
-                        fh.write(__)
-            
-            pysam.sort("-o", "/tmp/" + sid + ".sorted.bam", "/tmp/" + sid + ".unsorted.bam")
-            pysam.index("/tmp/" + sid + ".sorted.bam")
+            #sid = os.path.basename(bam_file)
+            #fn = "/tmp/" + sid + ".unsorted.bam"
+            #print("\n"+"/tmp/" + sid + ".sorted.bam"+"\n")
+            #with pysam.AlignmentFile(fn, "wb", header=header) as fh:
+            #    for _ in combined:
+            #        for __ in idx[_]:
+            #            fh.write(__)
+            #
+            #pysam.sort("-o", "/tmp/" + sid + ".sorted.bam", "/tmp/" + sid + ".unsorted.bam")
+            #pysam.index("/tmp/" + sid + ".sorted.bam")
             
         
         
