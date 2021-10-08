@@ -8,6 +8,12 @@ Scans for reads mapped to both TACC3 and FGFR3, directly from BAM files
 
 It counts reads that are aligned to both TACC3 and FGFR3. Secondary alignments are excluded.
 
+## Citing
+
+By using this software package, please cite our corresponding manuscript:
+
+Youri Hoogstrate, Santoesha A Ghisai, Maurice de Wit, Iris de Heer, Kaspar Draaisma, Job van Riet, Harmen J G van de Werken, Vincent Bours, Jan Buter, Isabelle Vanden Bempt, Marica Eoli, Enrico Franceschi, Jean-Sebastien Frenel, Thierry Gorlia, Monique C Hanse, Ann Hoeben, Melissa Kerkhof, Johan M Kros, Sieger Leenstra, Giuseppe Lombardi, Slávka Lukacova, Pierre A Robe, Juan M Sepulveda, Walter Taal, Martin Taphoorn, René M Vernhout, Annemiek M E Walenkamp, Colin Watts, Michael Weller, Filip Y F de Vos, Guido W Jenster, Martin van den Bent, Pim J French, The EGFRvIII transcriptome in glioblastoma, a meta-omics analysis, Neuro-Oncology, 2021;, noab231, https://doi.org/10.1093/neuonc/noab231
+
 ## Usage
 
 ```
